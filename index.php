@@ -9,7 +9,7 @@
 <body>
     
     <div class="login-container">
-        <form action="login.php" method="post">
+        <form action="jeopardy.php" method="post">
             <h1>Sign In!</h1>
             <div class="input-group">
                 <label for="username">Username:</label>
@@ -19,7 +19,7 @@
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required placeholder="Password">
             </div>
-            <button type="submit">Sign Up</button>
+            <button type="submit">Log In</button>
             <div class="login-link">
                 Don't have an account? <a href="signup.php"> <br>Sign Up</a>
             </div>

@@ -9,7 +9,7 @@
 <body>
     
     <div class="login-container">
-        <form action="login.php" method="post">
+        <form action="index.php" method="post">
             <h1>Sign Up!</h1>
             <div class="input-group">
                 <label for="name">Name:</label>
@@ -30,6 +30,22 @@
         </form>
     </div>
     
+    <?php
+    if (isset($_POST["name"]) && isset($_POST["username"]) && isset($_POST["password"])) {
+        // Retrieve the data from the POST request.
+        $name = $_POST["name"];
+        $username = $_POST["username"];
+        // For security, you would want to hash the password before storing it.
+        // NEVER store passwords as plain text in a real application.
+        $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+    
+        // Create a CSV line with the user's data.
+        $userData = $name . "," . $username . "," . $password . "\n";
+        
+        // Append the 'userData' string to the 'users.txt' file.
+        file_put_contents("users.txt", $userData, FILE_APPEND);
+    }
+    ?>
     
 
 </body>
