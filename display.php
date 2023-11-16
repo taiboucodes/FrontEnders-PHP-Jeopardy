@@ -18,8 +18,9 @@ $choices = $questionEntry["choices"];
 
 
 $answer = htmlentities(json_encode($questionEntry['answer']));
+$answer = intval($answer);
 $points = htmlentities(json_encode($questionEntry['points']));
-
+$points = intval($points);
 
 
 
