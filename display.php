@@ -23,13 +23,12 @@ $points = htmlentities(json_encode($questionEntry['points']));
 
 
 
-
 echo "<div class=\"question-card\">";
  echo "<h1>" . $question . "</h1>";
  echo "<form action=\"outcome.php\" method=\"post\">";
- foreach ($choices as $choice) {
-     echo "<input type=\"radio\" id=\"" .$answer . "\" name=\"answerOption\" value=\"" . urldecode($choice) . "\">";
-     echo "<label for=\"" .  urldecode($choice)  . "\">". urldecode($choice) ."</label><br>";
+ for ($i = 0; $i < 4; $i++) {
+     echo "<input type=\"radio\" id=\"" . [$i] . "\" name=\"answerOption\" value=\"" . urldecode($choices[$i]) . "\">";
+     echo "<label for=\"" .  urldecode($choices[$i])  . "\">". urldecode($choices[$i]) ."</label><br>";
  }
 echo "</div>";
 
