@@ -28,7 +28,7 @@ echo "<div class=\"question-card\">";
  echo "<h1>" . $question . "</h1>";
  echo "<form action=\"outcome.php\" method=\"post\">";
  for ($i = 0; $i < 4; $i++) {
-     echo "<input type=\"radio\" id=\"" . [$i] . "\" name=\"answerOption\" value=\"" . urldecode($choices[$i]) . "\">";
+     echo "<input type=\"radio\" id=\"" . [$i] . "\" name=\"answerOption\" value=\"" . [$i] . "\">";
      echo "<label for=\"" .  urldecode($choices[$i])  . "\">". urldecode($choices[$i]) ."</label><br>";
  }
 echo "</div>";
