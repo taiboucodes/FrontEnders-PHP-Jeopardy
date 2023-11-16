@@ -8,6 +8,12 @@
 <body>
     
     <?php
+    session_start();
+
+
+    if (!isset($_SESSION['score'])) {
+        $_SESSION['score'] = 0;
+    }
     function userExists($username, $password) {
         $users = file('users.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
         foreach ($users as $user) {
@@ -50,7 +56,9 @@
             }
         echo '</tr>';
         }
-    echo "</table>"
+    echo "</table>";
+
+    print("you have " . $_SESSION["score"] . " points");
 
 
 
