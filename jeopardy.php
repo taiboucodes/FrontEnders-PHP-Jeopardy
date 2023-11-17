@@ -78,7 +78,7 @@
 
         foreach ($questions as $category => $groupedQuestions) {
                 $question = $groupedQuestions[$i];
-                echo "<td><a href=\"display.php?question=" . htmlentities(json_encode($question)) . "\">" . $question["points"] . "</a></td>";
+                echo "<td><a href=\"display.php?question=" . htmlentities(json_encode($question)) . "\"> $" . $question["points"] . "</a></td>";
             }
         echo '</tr>';
         }
