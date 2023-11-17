@@ -13,18 +13,15 @@ if (!isset($_SESSION['score'])) {
     $points = json_decode(html_entity_decode($_POST['points']), true);
 
 
-    print($correctAnswer);
-    print($selectedAnswer);
 
     if ($selectedAnswer == $correctAnswer) {
         print("right answer!");
         $_SESSION['score'] += $points;
-    print("you have" . $_SESSION["score"] . "points");
+    print("you have " . $points . " points");
     }
     else{
         print("wrong answer! the correct answer was " . $correctAnswer);
     }
-
 
 
 //     $correctAnswer = $answer;
