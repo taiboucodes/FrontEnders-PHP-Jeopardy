@@ -93,7 +93,7 @@ h1 {
         opacity: 0;
     }
 }
-
+    /* Adjust the height/width of the table and placements of elements on the table */
 table {
     width: 90%;
     border-collapse: collapse;
@@ -128,8 +128,11 @@ a:hover, a:focus {
     background-color: #0000ff; 
     transform: scale(1.05); 
 }
-/* 
- td a:visited{
+ td a:visited {
     color: darkblue;
     background-color: transparent;
-}  */
+}
+a:visited {
+    color: darkblue;
+    background-color: transparent;
+}  
