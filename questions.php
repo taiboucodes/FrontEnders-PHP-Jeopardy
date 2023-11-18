@@ -49,13 +49,13 @@ $questions =
             "points" => 200
         ],
         [
-            "question" => "How many French Opens did Björn Borg win?",
+            "question" => "How many French Opens did Bjorn Borg win?",
             "choices" => ["6", "10", "4", "5"],
             "answer" => 0,
             "points" => 300
         ],
         [
-            "question" => "Who won the \"Champions League\" in 1999? ",
+            "question" => "Who won the Champions League in 1999? ",
             "choices" => ["Arsenal", "Liverpool", "Chelsea", "Manchester United"],
             "answer" => 3,
             "points" => 400

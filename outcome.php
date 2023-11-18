@@ -12,7 +12,6 @@
     
     session_start();
 
-    // Initialize score if not already set
     if (!isset($_SESSION['score'])) {
         $_SESSION['score'] = 0;
     }
@@ -21,12 +20,12 @@
     $points = json_decode(html_entity_decode($_POST['points']), true);
 
     if ($selectedAnswer == $correctAnswer) {
-        $_SESSION['score'] += $points; // Update score before creating the message
-        $message = "Correct answer! You have earned +" . $points . " points."; // Now the updated score will be displayed
-        $color = "#5cb85c"; // Green for correct answers
+        $_SESSION['score'] += $points; 
+        $message = "Correct answer! You have earned +" . $points . " points.";
+        $color = "#5cb85c"; 
     } else {
         $message = "Incorrect! The correct answer choice was " . $correctAnswer . ".";
-        $color = "#d9534f"; // Red for incorrect answers
+        $color = "#d9534f"; 
         $_SESSION['score'] -= $points;
     }
 
@@ -41,7 +40,7 @@
 
 
 
-    $username =  $_SESSION['username']; // Save the username in the session
+    $username =  $_SESSION['username']; 
     $name =  $_SESSION['name'];
 
     $file = 'leaderboard.txt';
@@ -55,12 +54,8 @@
     }
     $userPoints[$username] += $points;
     
-    // Save updated user points back to the file
     file_put_contents($file, json_encode($userPoints));
 
-
-
     ?>
-
 </body>
 </html>

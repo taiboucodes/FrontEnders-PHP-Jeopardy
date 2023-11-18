@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="display.css">
 </head>
 <body>
-
     <?php
-
     $question = $_GET['question'];
 
     $questionEntry = json_decode(html_entity_decode($question), true);
@@ -17,9 +15,8 @@
     $choices = $questionEntry["choices"];
 
     $answer = htmlentities(json_encode($questionEntry['answer']));
-    //$answer = intval($answer);
+   
     $points = htmlentities(json_encode($questionEntry['points']));
-    //$points = intval($points);
 
     echo "<div class=\"question-container\">";
     echo "<h1>" . $question . "</h1>";
@@ -38,6 +35,7 @@
     echo "</div>";
 
     ?>
-
 </body>
 </html>
+
+

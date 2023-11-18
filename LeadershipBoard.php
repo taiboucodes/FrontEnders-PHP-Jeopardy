@@ -16,18 +16,15 @@
                 $username = $_POST["username"];
                 $password = $_POST["password"];
 
-                $name = userExists($username, $password); //return name 
+                $name = userExists($username, $password); 
                 if ($name) {
-                    $_SESSION['username'] = $username; // Save the username in the session
-                    $_SESSION['name'] = $name; // Save the name in the session
+                    $_SESSION['username'] = $username; 
+                    $_SESSION['name'] = $name; 
                 }
             }
-
-            // Display the user's name if logged in
             if (isset($_SESSION['name'])) {
                 echo '<div class="user-container">Welcome, ' . $_SESSION['name'] . '</div>';
             }
-			// Display the user's current score
             if (isset($_SESSION['score'])) {
                 echo '<div class="user-score">Score: ' . $_SESSION['score'] . '</div>';
             }
@@ -37,10 +34,8 @@
 		<a href="jeopardy.php" class="logout-button home-button">Home</a>
     </div>
     <?php
-   //The function read is used to read the score 
 
-  
-    // function read() {
+
      $file = 'leaderboard.txt';
      $points = [];
 
