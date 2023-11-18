@@ -4,104 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaderboard</title>
-    <style>
-        body { 
-display: flex;
-background-position: center;
-background-image: url('JeoImage.png');
-background-size: cover;
-background-attachment: fixed;
-background-repeat: no-repeat;
-margin:0;
+   <link href="game.css" type="text/css" rel="stylesheet"/>
 
-}
-
-table {
-border-collapse: collapse;
-width: 70%;
-margin: 0 auto;
-margin-top: 290px;
-text-align:center;
-}
-
-th, td {
-border: 1px solid #ddd;
-padding: 12px;
-text-align: center;
-background-color: navy;
-color: white;
-font-size: 1.5em;
-}
-
-th {
-background-color: navy;
-color: gold;
-font-size: 2.0em;
-}
-    
-caption { 
-caption-side: top;
-color:white;
-margin-bottom: 10px;
-font-weight: bold;
-font-size: 3.0em;
-}
-	
-	</style>
 </head>
 <body>
     
     <?php
-   
-    function readScores() {
+   //The function read is used to read the score 
+    function read() {
      $file = 'leaderboard.txt';
-     $scores = [];
+     $points = [];
 
     if (file_exists($file)) {
      $content = file_get_contents($file);
      $Jeo = explode(PHP_EOL, $content);
 
-    foreach ($Jeo as $line) {
-     $score = json_decode($line, true);
+    foreach ($Jeo as $game) {
+     $score = json_decode($game, true);
     if ($score) {
-     $scores[] = $score;
+     $points[] = $score;
           }
        }
     }
 
-        
-     usort($scores, function ($a, $b) {
+     //Sorts by the highest score to the lowest score   
+     usort($points, function ($a, $b) {
       return $b['score'] - $a['score'];
         });
 
-      
+     //The ranks is based on the score the player gets  
       $rank = 1;
-     foreach ($scores as &$score) {
+     foreach ($points as &$score) {
       $score['rank'] = $rank++;
         }
 
-      return $scores;
+      return $points;
     }
 
     
-    function writeScores($scores) {
+    function write($points) {
      $file = 'leaderboard.txt';
 
      $Jeo = array_map(function ($score) {
       return json_encode($score);
-        }, $scores);
+        }, $points);
 
      $content = implode(PHP_EOL, $Jeo);
     file_put_contents($file, $content);
     }
 
-    
-    function addOrUpdateScore(&$scores, $playerName, $score) {
-    foreach ($scores as &$existingScore) {
-    if ($existingScore['player_name'] === $playerName) {
+    //The function add or also updates the player's score 
+    function AddScore(&$points, $ThePlayers, $score) {
+    foreach ($points as &$RecentScore) {
+    if ($RecentScore['player_name'] === $ThePlayers) {
                
-    if ($score > $existingScore['score']) {
-     $existingScore['score'] = $score;
+    if ($score > $RecentScore['score']) {
+     $RecentScore['score'] = $score;
       return true; 
       } else {
       return false; 
@@ -109,9 +67,9 @@ font-size: 3.0em;
      }
    }
 
-       
-        $scores[] = array(
-            "player_name" => $playerName,
+       //If a player doesn't exist it adds a new score for them. 
+        $points[] = array(
+            "player_name" => $ThePlayers,
             "score" => $score
         );
 
@@ -119,33 +77,33 @@ font-size: 3.0em;
     }
 
     
-    $playerNames = ["Pablo", "Peter", "Randy", "Sophia", "Karen", "Henry", "Bob"];
-    foreach ($playerNames as $playerName) {
+    $ThePlayerss = ["Pablo", "Peter", "Randy", "Sophia", "Karen", "Henry", "Bob"];
+    foreach ($ThePlayerss as $ThePlayers) {
         $score = rand(0, 7500);
 
        
-        $scores = readScores();
+        $points = read();
 
         
-        $scoreUpdated = addOrUpdateScore($scores, $playerName, $score);
+        $scoreUpdated = AddScore($points, $ThePlayers, $score);
 
-        
+     //It keeps only the top 5 players high scores on the leaderboard    
      if ($scoreUpdated) {
             
-     usort($scores, function ($a, $b) {
+     usort($points, function ($a, $b) {
       return $b['score'] - $a['score'];
             });
 
             
-      $scores = array_slice($scores, 0, 5);
+      $points = array_slice($points, 0, 5);
 
             
-      writeScores($scores);
+      write($points);
       }
    }
 
     
-    $scores = readScores();
+    $points = read();
     ?>
 
    
@@ -159,7 +117,7 @@ font-size: 3.0em;
 
         <?php
 		
-        foreach ($scores as $score) {
+        foreach ($points as $score) {
          echo "<tr><td>{$score['rank']}</td><td>{$score['player_name']}</td><td>{$score['score']}</td></tr>";
         }
         ?>

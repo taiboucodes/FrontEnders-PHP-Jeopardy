@@ -1,0 +1,41 @@
+        body { 
+display: flex;
+background-position: center;
+background-image: url('JeoImage.png');
+background-size: cover;
+background-attachment: fixed;
+background-repeat: no-repeat;
+margin:0;
+
+}
+
+table {
+border-collapse: collapse;
+width: 70%;
+margin: 0 auto;
+margin-top: 290px;
+text-align:center;
+}
+
+th, td {
+border: 1px solid #ddd;
+padding: 12px;
+text-align: center;
+background-color: navy;
+color: white;
+font-size: 1.5em;
+}
+
+th {
+background-color: navy;
+color: gold;
+font-size: 2.0em;
+}
+    
+caption { 
+caption-side: top;
+color:white;
+margin-bottom: 10px;
+font-weight: bold;
+font-size: 3.0em;
+}
