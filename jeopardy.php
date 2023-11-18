@@ -36,7 +36,6 @@
     <?php
     session_start();
 
-
     if (!isset($_SESSION['score'])) {
         $_SESSION['score'] = 0;
     }
@@ -72,7 +71,6 @@
     }
     echo "</tr>";
 
-            
     for ($i = 0; $i < 5; $i++) {
         echo"<tr>";
 
@@ -83,13 +81,9 @@
         echo '</tr>';
         }
     echo "</table>";
-
     print("you have " . $_SESSION["score"] . " points");
 
-
-
     ?>
-
 
 </body>
 </html>
