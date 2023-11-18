@@ -23,37 +23,37 @@ body {
     justify-content: center;
 }
 .user-container {
-    color: #007bff; /* Change the text color to blue */
-    font-weight: bold; /* Make the text bold */
-    font-size: 200%; /* Double the font size */
+    color: #007bff; 
+    font-weight: bold; 
+    font-size: 200%; 
     padding: 10px 5%;
     height: 50%;
     display: flex;
     align-items: center;
 }
-/* Styles for the user's score container */
+
 .user-score {
-    color: #007bff; /* Change the text color to blue */
-    font-weight: bold; /* Make the text bold */
-    font-size: 200%; /* Double the font size */
+    color: #007bff; 
+    font-weight: bold;
+    font-size: 200%; 
     padding: 10px 5%;
     height: 50%;
     display: flex;
     align-items: center;
 }
-/* Styles for the leaderboard container */
+
 .leaderboard-container {
-    color: #007bff; /* Change the text color to blue */
-    font-weight: bold; /* Make the text bold */
-    font-size: 200%; /* Double the font size */
+    color: #007bff; 
+    font-weight: bold; 
+    font-size: 200%; 
     padding: 10px 5%;
     background-color: orange;
     height: 50%;
     display: flex;
     align-items: center;
-    justify-content: center; /* Center it if it's the only element, adjust as necessary */
+    justify-content: center; 
 }
-/* Styles for the log out button and home button */
+
 .logout-button, .home-button {
     color: #007bff;
     font-weight: bold;
@@ -93,7 +93,7 @@ h1 {
         opacity: 0;
     }
 }
-    /* Adjust the height/width of the table and placements of elements on the table */
+
 table {
     width: 90%;
     border-collapse: collapse;
@@ -123,16 +123,7 @@ a {
     display: block;
     transition: transform 0.2s;
 }
-    /* Adds a highlight effect when hovering over */
 a:hover, a:focus {
     background-color: #0000ff; 
     transform: scale(1.05); 
 }
- td a:visited {
-    color: darkblue;
-    background-color: transparent;
-}
-a:visited {
-    color: darkblue;
-    background-color: transparent;
-}  
