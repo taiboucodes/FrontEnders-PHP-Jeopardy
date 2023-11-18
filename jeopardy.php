@@ -31,6 +31,7 @@
                 echo '<div class="user-score">Score: ' . $_SESSION['score'] . '</div>';
             }
         ?>
+        <a href="LeadershipBoard.php" class="leaderboard-container">Leaderboard</a>
         <a href="logout.php" class="logout-button">Log Out</a>
     </div>
     <?php
@@ -52,12 +53,13 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $username = $_POST["username"];
         $password = $_POST["password"];
-
-         $name = userExists($username, $password); //return name 
+        $name = userExists($username, $password); //return name 
         if ($name) {
-            echo "Login successful. Welcome, $name!"; //takes user to game page
+            echo "<div id='user'><h2>Login successful. Welcome, $name!</h2></div>";
         } else {
-            echo "Login failed. Invalid username or password.";
+            echo "Login failed. Invalid username or password. You will be redirected in 3 seconds";
+            header("Refresh:3; url=index.php");
+            exit;
         }
     }
 
@@ -81,7 +83,6 @@
         echo '</tr>';
         }
     echo "</table>";
-    print("you have " . $_SESSION["score"] . " points");
 
     ?>
 

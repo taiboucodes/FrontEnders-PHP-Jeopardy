@@ -103,7 +103,7 @@ $questions =
     "Geography" => 
     [
         [
-            "question" => "What is the largest river in the world?",
+            "question" => "What is the longest river in the world?",
             "choices" => ["The Yellow River", "The Nile River", "The Yangtze River ", "The Amazon River"],
             "answer" => 1,
             "points" => 100

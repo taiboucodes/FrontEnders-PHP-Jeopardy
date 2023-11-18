@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
     <div class="login-container">
         <form action="jeopardy.php" method="post">
             <h1>Sign In!</h1>
@@ -25,10 +25,6 @@
             </div>
         </form>
     </div>
-
     
-
-
-
 </body>
 </html>

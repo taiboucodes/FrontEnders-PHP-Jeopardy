@@ -1,7 +1,7 @@
     /* Adds the font the background, centering, and aligning items*/
 body { 
     font-family: 'Arial', sans-serif;
-    background-image: url('jeopardypng.png');
+    background-image: url('jeopardy.png');
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -41,8 +41,18 @@ body {
     display: flex;
     align-items: center;
 }
-
-
+/* Styles for the leaderboard container */
+.leaderboard-container {
+    color: #007bff; /* Change the text color to blue */
+    font-weight: bold; /* Make the text bold */
+    font-size: 200%; /* Double the font size */
+    padding: 10px 5%;
+    background-color: orange;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center it if it's the only element, adjust as necessary */
+}
 /* Styles for the log out button */
 .logout-button {
     color: #007bff;
@@ -58,20 +68,35 @@ body {
     align-items: center;
     justify-content: center;
 }
-
 .logout-button:hover {
+    background-color: orange;
+}
+.leaderboard-container:hover {
     background-color: orange;
 }
 h1 {
     color: goldenrod;
     text-shadow: 2px 2px 4px #000;
 }
+#user {
+    background-color: navy;
+    color: goldenrod;
+    animation: fadeOut 5s forwards; 
+}
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
     /* Adjust the height/width of the table and placements of elements on the table */
 table {
     width: 90%;
     border-collapse: collapse;
     margin: 5vh 0; 
-    margin-top: 18vh;
+    margin-top: 20vh;
     text-align: center;
     height: 70%;
 }

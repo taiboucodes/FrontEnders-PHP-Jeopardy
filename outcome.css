@@ -1,0 +1,56 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('outcome.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+#outcome-message {
+    background-color: navy;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 4px;
+    color: red;
+    border: 2px solid gold;
+    width: 80%;
+    max-width: 800px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+}
+#return-button {
+    display: block; 
+    padding: 10px 20px; 
+    margin-top: 20px; 
+    background-color: #0056b3; 
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+}
+#return-button:hover {
+    background-color: #3071a9;
+    cursor: pointer;
+}
+img {
+    max-width: 100%; 
+    height: auto; 
+    animation: grow 3s forwards;
+}
+@keyframes grow {
+    from {
+        width: 0px;
+        height: 0px;
+    }
+    to {
+        width: 300px;
+        height: 300px;
+    }
+}

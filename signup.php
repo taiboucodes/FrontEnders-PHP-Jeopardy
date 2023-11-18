@@ -32,22 +32,22 @@
         </div>
 
     <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["signup"])) {
-        $name = $_POST["name"];
-        $username = $_POST["username"];
-        $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["signup"])) {
+            $name = $_POST["name"];
+            $username = $_POST["username"];
+            $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
-        $data = "$name,$username,$password\n";
+            $data = "$name,$username,$password\n";
 
         // Append data to users.txt file, so they don't have sign up each time
         $file = 'users.txt';
-        if (file_put_contents($file, $data, FILE_APPEND | LOCK_EX) !== false) {
-            header('Location: index.php'); //takes user to log in page
-            exit();
-        } else {
-            echo "Error writing to $file. Please check file permissions.";
+            if (file_put_contents($file, $data, FILE_APPEND | LOCK_EX) !== false) {
+                header('Location: index.php'); //takes user to log in page
+                exit();
+            } else {
+                echo "Error writing to $file. Please check file permissions.";
+            }
         }
-    }
     ?>
 
 </body>
