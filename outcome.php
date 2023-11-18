@@ -22,7 +22,7 @@
 
     if ($selectedAnswer == $correctAnswer) {
         $_SESSION['score'] += $points; // Update score before creating the message
-        $message = "Correct answer! You have " . $_SESSION['score'] . " points."; // Now the updated score will be displayed
+        $message = "Correct answer! You have earned +" . $points . " points."; // Now the updated score will be displayed
         $color = "#5cb85c"; // Green for correct answers
     } else {
         $message = "Incorrect! The correct answer choice was " . $correctAnswer . ".";
@@ -37,6 +37,28 @@
     }
     echo "<a href='jeopardy.php' id='return-button'>Return to Game</a>";
     echo "</div>";
+
+
+
+
+    $username =  $_SESSION['username']; // Save the username in the session
+    $name =  $_SESSION['name'];
+
+    $file = 'leaderboard.txt';
+
+
+    $userPoints = [];
+    $userPoints = json_decode(file_get_contents($file), true);
+
+    if (!isset($userPoints[$username])) {
+        $userPoints[$username] = 0;
+    }
+    $userPoints[$username] += $points;
+    
+    // Save updated user points back to the file
+    file_put_contents($file, json_encode($userPoints));
+
+
 
     ?>
 

@@ -126,3 +126,8 @@ a:hover, a:focus {
     background-color: #0000ff; 
     transform: scale(1.05); 
 }
+/* 
+ td a:visited{
+    color: darkblue;
+    background-color: transparent;
+}  */
