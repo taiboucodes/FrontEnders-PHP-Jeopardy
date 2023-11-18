@@ -70,7 +70,7 @@
        //If a player doesn't exist it adds a new score for them. 
         $points[] = array(
             "player_name" => $ThePlayers,
-            "score" => $score
+            "score" => round($score, -2)
         );
 
         return true; 
