@@ -34,11 +34,13 @@
         ?>
         <a href="LeadershipBoard.php" class="leaderboard-container">Leaderboard</a>
         <a href="logout.php" class="logout-button">Log Out</a>
+		<a href="jeopardy.php" class="logout-button home-button">Home</a>
     </div>
     <?php
+   //The function read is used to read the score 
 
-
-
+  
+    // function read() {
      $file = 'leaderboard.txt';
      $points = [];
 
