@@ -33,6 +33,7 @@
         ?>
         <a href="LeadershipBoard.php" class="leaderboard-container">Leaderboard</a>
         <a href="logout.php" class="logout-button">Log Out</a>
+		<a href="jeopardy.php" class="logout-button home-button">Home</a>
     </div>
     <?php
     session_start();
