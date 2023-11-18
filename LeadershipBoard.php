@@ -10,10 +10,9 @@
 <body>
     
     <?php
-   //The function read is used to read the score 
 
-  
-    // function read() {
+
+
      $file = 'leaderboard.txt';
      $points = [];
 

@@ -133,37 +133,37 @@ $questions =
             "points" => 500
         ]
     ],
-    "Category 5" => 
+    "Film" => 
     [
         [
-            "question" => "Question 1",
-            "choices" => ["Choice A", "Choice B", "Choice C", "Choice D"],
-            "answer" => "Answer 1",
+            "question" => "What are the bad guys called in The Transformers? ",
+            "choices" => ["Decepticons", "Megatron", "Jafar", "Wolverine"],
+            "answer" => 0,
             "points" => 100
         ],
         [
-            "question" => "Question 1",
-            "choices" => ["Choice A", "Choice B", "Choice C", "Choice D"],
-            "answer" => "Answer 1",
-            "points" => 100
+            "question" => "In Because of Winn-Dixie, what is Winn-Dixie? ",
+            "choices" => ["An Old Man", "A Bird", "A Cat", "A Dog"],
+            "answer" => 3,
+            "points" => 200
         ],
         [
-            "question" => "Question 1",
-            "choices" => ["Choice A", "Choice B", "Choice C", "Choice D"],
-            "answer" => "Answer 1",
-            "points" => 100
+            "question" => "Which Pixar movie featured a journey to South America in a house held up by floating balloons?",
+            "choices" => ["Inside Out", "Buzz LighYear", "Up", "Wall-E"],
+            "answer" => 2,
+            "points" => 300
         ],
         [
-            "question" => "Question 1",
-            "choices" => ["Choice A", "Choice B", "Choice C", "Choice D"],
-            "answer" => "Answer 1",
-            "points" => 100
+            "question" => "What are the names of the twins played by Lindsay Lohan in the 1998 film The Parent Trap? ",
+            "choices" => ["Jane and Anne", "Haley and Bailey", "Hallie and Annie", "Emma and Jemma"],
+            "answer" => 2,
+            "points" => 400
         ],
         [
-            "question" => "Question 1",
-            "choices" => ["Choice A", "Choice B", "Choice C", "Choice D"],
-            "answer" => "Answer 1",
-            "points" => 100
+            "question" => "How many tributes survive the first day of The Hunger Games? ",
+            "choices" => ["13", "15", "11", "19"],
+            "answer" => 2,
+            "points" => 500
         ]
     ]
     
